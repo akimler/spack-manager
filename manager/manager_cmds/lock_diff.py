@@ -12,7 +12,10 @@ import string
 import sys
 
 import spack.environment as ev
-import llnl.util.tty as tty
+try:
+    import llnl.util.tty as tty
+except ImportError:
+    import spack.llnl.util.tty as tty
 from spack.spec import Spec
 
 command_name = "lock-diff"

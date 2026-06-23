@@ -14,8 +14,12 @@ import spack.cmd.mirror
 import spack.config
 import spack.environment
 import spack.extensions
-import llnl.util.filesystem as fs
-import llnl.util.tty as tty
+try:
+    import llnl.util.filesystem as fs
+    import llnl.util.tty as tty
+except ImportError:
+    import spack.llnl.util.filesystem as fs
+    import spack.llnl.util.tty as tty
 import spack.main
 import spack.solver.asp
 import spack.spec
