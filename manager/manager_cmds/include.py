@@ -8,10 +8,7 @@
 import os
 import sys
 
-try:
-    import llnl.util.tty as tty
-except ImportError:
-    import spack.llnl.util.tty as tty
+import llnl.util.tty as tty
 
 from .. import projects
 from .find_machine import find_machine, machine_defined

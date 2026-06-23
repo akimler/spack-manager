@@ -6,10 +6,7 @@
 
 import os
 
-try:
-    import spack.llnl.util.lang as lang
-except ImportError:
-    import spack.llnl.util.lang as lang
+import llnl.util.lang as lang
 # from .. import manager
 from . import config_yaml
 from .manager_utils import canonicalize_path
