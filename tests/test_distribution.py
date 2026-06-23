@@ -900,8 +900,8 @@ def _assert_boostrap_copy_from_env(monkeypatch, tmpdir, mirror_type):
 
     # Create a fake bootstrap mirror structure on disk
     fake_mirror_root = os.path.join(tmpdir.strpath, "fake_mirror")
-    metadata_dir = os.path.join(fake_mirror_root, "metadata")
-    metadata_subdir = os.path.join(metadata_dir, mirror_type)
+    sources_dir = os.path.join(fake_mirror_root, "metadata")
+    metadata_subdir = os.path.join(sources_dir, mirror_type)
     os.makedirs(metadata_subdir, exist_ok=True)
     with open(os.path.join(metadata_subdir, "some_data.yaml"), "w") as f:
         f.write("data")
