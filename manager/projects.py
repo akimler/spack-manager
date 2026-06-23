@@ -7,9 +7,9 @@
 import os
 
 try:
-    import llnl.util.tty
+    import spack.llnl.util.lang as lang
 except ImportError:
-    import spack.llnl.util.lang
+    import spack.llnl.util.lang as lang
 # from .. import manager
 from . import config_yaml
 from .manager_utils import canonicalize_path
@@ -68,7 +68,7 @@ class Project:
         if os.path.isfile(detection_script):
             # dynamically import the find script for the project here
             # so we can just load the detection script
-            mod = spack.llnl.util.lang.load_module_from_file(
+            mod = lang.load_module_from_file(
                 DETECTION_MODULE.format(n=self.name), detection_script
             )
             self.detector = mod.detector
