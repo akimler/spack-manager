@@ -10,9 +10,13 @@ import os
 import spack.build_environment as build_environment
 import spack.builder
 import spack.cmd
-import spack.llnl.util.tty as tty
 import spack.paths
-from spack.llnl.util.filesystem import working_dir
+try:
+    import llnl.util.tty as tty
+    import llnl.util.filesystem as working_dir
+except ImportError:
+    import spack.llnl.util.tty as tty
+    import spack.llnl.util.filesystem as working_dir
 from spack.util.executable import Executable
 
 """
