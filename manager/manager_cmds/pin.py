@@ -12,7 +12,11 @@ Functions for snapshot creation that are added here to be testable
 import os
 
 import spack.cmd
-import spack.llnl.util.tty as tty
+
+try:
+    import spack.llnl.util.tty as tty
+except ImportError:
+    import spack.util.tty as tty
 import spack.main
 import spack.traverse as traverse
 import spack.util.executable
